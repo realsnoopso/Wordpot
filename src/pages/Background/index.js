@@ -2,11 +2,8 @@ import { createClient } from '@supabase/supabase-js';
 
 // Supabase client setup
 const supabaseUrl = 'https://pbgazkitooxguqiskhac.supabase.co';
-const supabaseKey = process.env.SUPABASE_KEY;
+const supabaseKey = 'sk-proj-DiIV7LWXl9smy0w68pfYT3BlbkFJ9zOWI4Zvxs8IguwSKXDw';
 export const supabase = createClient(supabaseUrl, supabaseKey);
-
-console.log('This is the background page.');
-console.log('Put the background scripts here.');
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
@@ -22,8 +19,8 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 
     try {
       const { data, error } = await supabase
-        .from('texts') // Store in 'texts' table
-        .insert([{ text: selectedText }]);
+        .from('words') // Store in 'words' table
+        .insert([{ word: selectedText }]);
 
       if (error) {
         throw error;
