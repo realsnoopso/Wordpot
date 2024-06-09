@@ -2,7 +2,8 @@ import { createClient } from '@supabase/supabase-js';
 
 // Supabase client setup
 const supabaseUrl = 'https://pbgazkitooxguqiskhac.supabase.co';
-const supabaseKey = 'sk-proj-DiIV7LWXl9smy0w68pfYT3BlbkFJ9zOWI4Zvxs8IguwSKXDw';
+const supabaseKey =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBiZ2F6a2l0b294Z3VxaXNraGFjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcxNzg4NTk1OCwiZXhwIjoyMDMzNDYxOTU4fQ._Q-1afn2EwowpORsJhe9lES9i5jymSj8wpN_8hR9WS8';
 export const supabase = createClient(supabaseUrl, supabaseKey);
 
 chrome.runtime.onInstalled.addListener(() => {
